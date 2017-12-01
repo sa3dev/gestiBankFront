@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+      <h2>Creation d'un conseiller:</h2>
+        <form novalidate [formGroup]="conseillerForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-group">    
+              <label>matricule</label>
+              <input type="number"
+                     class="form-control"
+                     formControlName="matricule">
+            </div>
+
+            <div class="form-group">    
+              <label>nom</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="name">
+            </div>
+
+            <div class="form-group">
+              <label>prenom</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="firstname">
+            </div>
+
+            <div class="form-group">
+              <label>pseudo</label>
+              <input type="email"
+                     class="form-control"
+                     formControlName="pseudo">
+            </div>
+
+            <div class="form-group">
+              <label>motdepasse</label>
+              <input type="password"
+                     class="form-control"
+                     formControlName="password">
+            </div>
+            <div class="form-group">
+              <label>email</label>
+              <input type="email"
+                     class="form-control"
+                     formControlName="email">
+            </div>
+
+            <div class="form-group">
+              <label>adresse</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="address">
+            </div>
+
+            <div class="form-group">
+              <label>codePostal</label>
+              <input type="number"
+                     class="form-control"
+                     formControlName="codePostal">
+            </div>
+
+            <div class="form-group">
+              <label>ville</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="ville">
+            </div>
+
+            <div class="form-group">
+              <label>telephone</label>
+              <input type="number"
+                     class="form-control"
+                     formControlName="telephone">
+            </div>
+
+            <div class="form-group">
+              <label>dateNaissance</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="dateNaissance">
+            </div>
+
+
+          <button type="submit" class="btn btn-primary"  [disabled]="!conseillerForm.valid">Submit</button>
+          <button type="button" class="btn btn-warning" (click)="redirectConseillerPage()">Cancel</button>
+          <pre>{{conseillerForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Liste des Conseillers</h1>
+            </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-2">
+               <button type="button" class="btn btn-primary" (click)="redirectNewConseillerPage()">New Conseiller</button>
+            </div>
+          </div>
+        </header>
+      </section>
+ 
+      <section class="main">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+           
+
+            <th>Email</th>
+            
+            <th>Code Postale</th>
+            <th>Ville</th>
+
+            <th>Telephone</th>
+           
+            <th>Matricule</th>
+            
+
+          <!--   <th>Pseudo</th>
+            <th>Password</th>
+            <th>Adresse</th>
+             <th>date de Naissance</th>
+             <th>Liste de Demande </th>-->
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let conseiller of conseillers">
+            <th>{{ conseiller.nom }}       </th>
+            <td>{{ conseiller.prenom }}    </td>
+           
+            <td>{{ conseiller.email }}     </td>
+           
+            <td>{{ conseiller.codePostal }}</td>
+            <td>{{ conseiller.ville }}      </td>
+
+            <td>{{ conseiller.telephone }}    </td>
+         
+            <td>{{ conseiller.matricule }}    </td>
+           
+            
+
+ <!--<td>{{ conseiller.pseudo }}    </td>
+            <td>{{ conseiller.motdepasse }}</td>
+             <td>{{ conseiller.adresse }}   </td>
+                <td>{{ conseiller.dateNaissance }}</td>
+                 <td>{{ conseiller.listeDemandesClient }}</td>-->
+
+
+            <td>
+               <button type="button" class="btn btn-success" (click)="editConseillerPage(conseiller)">Edit</button>
+               <button type="button" class="btn btn-danger" (click)="deleteConseiller(conseiller)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

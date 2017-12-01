@@ -1,14 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserModule } from './user/user.module';
+import { HttpModule } from '@angular/http';
+//ajout ici de notre module admin dans l'app
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    UserModule,
+    HttpModule,
+    AdminModule  //et ici aussi
   ],
   providers: [],
   bootstrap: [AppComponent]
