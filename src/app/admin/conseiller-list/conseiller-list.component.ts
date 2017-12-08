@@ -37,7 +37,7 @@ export class ConseillerListComponent implements OnInit {
 		}
 	}
 
-	deleteConseiller(conseiller : Conseiller){
+	/*deleteConseiller(conseiller : Conseiller){
 		if (conseiller) {
 			this.conseillerService.deleteConseillerByMle(conseiller.matricule).subscribe(
 					res=>{ 
@@ -46,7 +46,7 @@ export class ConseillerListComponent implements OnInit {
 					 }
 				)
 		}
-	}
+	}*/
 
 	
 }

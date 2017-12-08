@@ -22,47 +22,35 @@
           <tr>
             <th>Nom</th>
             <th>Prénom</th>
-           
-
             <th>Email</th>
-            
             <th>Code Postale</th>
             <th>Ville</th>
-
             <th>Telephone</th>
-           
             <th>Matricule</th>
-            
 
-          <!--   <th>Pseudo</th>
-            <th>Password</th>
-            <th>Adresse</th>
-             <th>date de Naissance</th>
-             <th>Liste de Demande </th>-->
+          <!--  <th>Pseudo</th>
+                <th>Password</th>
+                <th>Adresse</th>
+                <th>date de Naissance</th>
+                <th>Liste de Demande </th>-->
+
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let conseiller of conseillers">
             <th>{{ conseiller.nom }}       </th>
             <td>{{ conseiller.prenom }}    </td>
-           
             <td>{{ conseiller.email }}     </td>
-           
             <td>{{ conseiller.codePostal }}</td>
             <td>{{ conseiller.ville }}      </td>
+            <td>{{ conseiller.telephone }}  </td>
+            <td>{{ conseiller.matricule }}  </td>
 
-            <td>{{ conseiller.telephone }}    </td>
-         
-            <td>{{ conseiller.matricule }}    </td>
-           
-            
-
- <!--<td>{{ conseiller.pseudo }}    </td>
-            <td>{{ conseiller.motdepasse }}</td>
-             <td>{{ conseiller.adresse }}   </td>
-                <td>{{ conseiller.dateNaissance }}</td>
+             <!--<td>{{ conseiller.pseudo }}    </td>
+                 <td>{{ conseiller.motdepasse }}</td>
+                 <td>{{ conseiller.adresse }}   </td>
+                 <td>{{ conseiller.dateNaissance }}</td>
                  <td>{{ conseiller.listeDemandesClient }}</td>-->
-
 
             <td>
                <button type="button" class="btn btn-success" (click)="editConseillerPage(conseiller)">Edit</button>

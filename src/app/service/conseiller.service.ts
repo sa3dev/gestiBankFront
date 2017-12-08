@@ -4,12 +4,15 @@ import { Http, Response } from "@angular/http";	  // http servira a travailler a
 import 'rxjs/add/operator/map';     //map va servir a mettre en lien les données
 import 'rxjs/add/operator/catch';	//catch servira a attraper une erreur si il ya .
 import { Observable } from "rxjs/Observable";	// observable est lobjet qui servira a utliser rxjs 'en gros'. 
+import { Demande } from "../modele/demande"; 
+
 
 
 @Injectable() 
 export class ConseillerService {
 	private apiUrl = 'http://localhost:8080/SpringAngularStartProject/conseillers/';
 	private apiUrl2 = 'http://localhost:8080/SpringAngularStartProject/conseiller/';
+	private apiDemand= 'http://localhost:8080/SpringAngularStartProject/demands/';
 
 	constructor(private http: Http) { }//a chaque apelle on lance un http process
 
@@ -44,5 +47,9 @@ export class ConseillerService {
 		      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-
+    getAlldemands() : Observable<Demande[]>{
+    	return this.http.get(this.apiDemand)
+	      .map((res:Response) => res.json())
+	      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+	}
 }
