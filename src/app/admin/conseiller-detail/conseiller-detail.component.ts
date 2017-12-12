@@ -67,7 +67,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 	  					dateNaissance :conseiller.dateNaissance 
 	  				});
 	  			},
-	  			error => { 
+	  			error => {
 	  				console.log(error);
 	  			}
   			)
@@ -79,27 +79,26 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 	}
 
 	onSubmit(){
-		  	if (this.conseillerForm.valid) { //editer un conseiller 
+		  	if (this.conseillerForm.valid) { // editer un conseiller 
 
 		  		if(this.matricule){
 		  		let conseillers : Conseiller = new Conseiller(
+				this.matricule,
+				// this.conseillerForm.controls['matricule'].value,
+				this.conseillerForm.controls['name'].value,
+				this.conseillerForm.controls['firstname'].value,
+				this.conseillerForm.controls['pseudo'].value,
 
-		  			this.matricule,
-		  			//this.conseillerForm.controls['matricule'].value, 		  			
-		  			this.conseillerForm.controls['name'].value,
-		  			this.conseillerForm.controls['firstname'].value,
-		  			this.conseillerForm.controls['pseudo'].value,
+				this.conseillerForm.controls['password'].value,
+				this.conseillerForm.controls['address'].value,
+				this.conseillerForm.controls['email'].value,
 
-		  			this.conseillerForm.controls['password'].value,
-		  			this.conseillerForm.controls['address'].value,
-		  			this.conseillerForm.controls['email'].value,
+				this.conseillerForm.controls['codePostal'].value,
+				this.conseillerForm.controls['ville'].value,
+				this.conseillerForm.controls['telephone'].value,
+				this.conseillerForm.controls['dateNaissance'].value);
 
-		  			this.conseillerForm.controls['codePostal'].value,
-		  			this.conseillerForm.controls['ville'].value,
-		  			this.conseillerForm.controls['telephone'].value,
-		  			this.conseillerForm.controls['dateNaissance'].value);
-
-		  			this.conseillerService.updateConseiller(conseillers).subscribe();
+				this.conseillerService.updateConseiller(conseillers).subscribe();
 
 		  	}else{
 		  		let conseillers : Conseiller = new Conseiller(

@@ -7,17 +7,22 @@ import { UserModule } from './user/user.module';
 import { HttpModule } from '@angular/http';
 //ajout ici de notre module admin dans l'app
 import { AdminModule } from './admin/admin.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
     HttpModule,
-    AdminModule  //et ici aussi
+    FormsModule,
+    ReactiveFormsModule,
+    AdminModule  // et ici aussi
   ],
   providers: [],
   bootstrap: [AppComponent]

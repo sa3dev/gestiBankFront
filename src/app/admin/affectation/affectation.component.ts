@@ -53,4 +53,8 @@ export class AffectationComponent implements OnInit {
 		}
 	}
 
+	/*affecteConseillerToClient(conseiller.matricule , demand ) {
+
+	}*/
+
 }

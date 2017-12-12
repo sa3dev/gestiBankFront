@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { User } from "../../modele/user";
-import { UserService } from "../../service/user.service";
+import { User } from '../../modele/user';
+import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,15 +12,13 @@ import { Router } from '@angular/router';
 
 export class UserListComponent implements OnInit {
   private users: User[];
-  
-  constructor(private router: Router,
-  	private userService: UserService) { }
 
-  ngOnInit() { //when component loading get all users and set the users[]
+  constructor(private router: Router,
+  private userService: UserService) { }
+
+  ngOnInit() {    // when component loading get all users and set the users[]
     this.getAllUsers();
   }
-
- 
 
   getAllUsers() {
     this.userService.findAll().subscribe(
@@ -29,20 +27,19 @@ export class UserListComponent implements OnInit {
       },
       err => {
         console.log(err);
-      }
-	);
+      });
   }
 
   redirectNewUserPage() {
     this.router.navigate(['/user/create']);
   }
- 
+
   editUserPage(user: User) {
     if (user) {
       this.router.navigate(['/user/edit', user.id]);
     }
   }
- 
+
   deleteUser(user: User) {
     if (user) {
       this.userService.deleteUserById(user.id).subscribe(
