@@ -14,6 +14,7 @@ import { Http } from '@angular/http/src/http';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  private  typeUtilisateur: string;
 
   constructor( private route: ActivatedRoute,
     private router: Router,
@@ -30,10 +31,17 @@ export class LoginComponent implements OnInit {
     const a = this.loginForm.controls['pseudo'].value;
     const b = this.loginForm.controls['password'].value ;
 
-    this.conseillerService.connexion( a , b ).subscribe( );
+    this.conseillerService.connexion( a , b ).subscribe(
+      result => { this.typeUtilisateur = result},
+      error => { console.log(error);  });
 
-    // on recupere les parametres de la reponse si elle est bonne
-    // et on fait correspondre au routing ?
+      if ( this.typeUtilisateur === 'Administrateur' ) {
+          this.router.navigate(['admin']);
+      }else if ( this.typeUtilisateur === 'Conseiller') {
+        this.router.navigate(['conseiller']);
+      }else if (this.typeUtilisateur === 'Client') {
+        this.router.navigate(['client']);
+      }
   }
 
 }

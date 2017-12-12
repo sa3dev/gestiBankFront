@@ -9,7 +9,7 @@ import { Router , ActivatedRoute } from '@angular/router';
   selector: 'app-conseiller-detail',
   templateUrl: './conseiller-detail.component.html',
   styleUrls: ['./conseiller-detail.component.css'],
-  providers: [ ConseillerService ] 
+  providers: [ ConseillerService ]
 
 })
 export class ConseillerDetailComponent implements OnInit , OnDestroy{
@@ -17,7 +17,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 	matricule: number;
 	conseiller: Conseiller;
 	conseillerForm: FormGroup;
-	private sub : any;
+	private sub: any;
 
   constructor( private route: ActivatedRoute, 
   			   private router : Router,
@@ -25,7 +25,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 
   ngOnInit() {
   	this.sub = this.route.params.subscribe(
-  		params => { this.matricule = params['mle']; }  //attention ici on met un detecteur d'evenement pour trouver les id/mle ici on a mis mle pour correspondre avec le routage admin-routing
+  		params => { this.matricule = params['mle']; }  // attention ici on met un detecteur d'evenement pour trouver les id/mle ici on a mis mle pour correspondre avec le routage admin-routing
   		)
 
 
@@ -62,9 +62,9 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 	  					email :		conseiller.email,
 
 	  					telephone: conseiller.telephone,
-	  					codePostal :conseiller.codePostal,
+	  					codePostal: conseiller.codePostal,
 	  					ville :		conseiller.ville,
-	  					dateNaissance :conseiller.dateNaissance 
+	  					dateNaissance: conseiller.dateNaissance
 	  				});
 	  			},
 	  			error => {
@@ -74,15 +74,15 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
   	}
   }
 
-	ngOnDestroy(): void{
+	ngOnDestroy(): void {
 		this.sub.unsubscribe();
 	}
 
-	onSubmit(){
-		  	if (this.conseillerForm.valid) { // editer un conseiller 
+	onSubmit() {
+		  	if (this.conseillerForm.valid) { // editer un conseiller
 
-		  		if(this.matricule){
-		  		let conseillers : Conseiller = new Conseiller(
+		  		if (this.matricule) {
+		  		let conseillers: Conseiller = new Conseiller(
 				this.matricule,
 				// this.conseillerForm.controls['matricule'].value,
 				this.conseillerForm.controls['name'].value,
@@ -100,7 +100,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 
 				this.conseillerService.updateConseiller(conseillers).subscribe();
 
-		  	}else{
+		  	}else {
 		  		let conseillers : Conseiller = new Conseiller(
 		  			this.conseillerForm.controls['matricule'].value,
 		  			this.conseillerForm.controls['name'].value,
@@ -125,7 +125,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 
 	}
 
-	redirectConseillerPage(){
+	redirectConseillerPage() {
 		this.router.navigate(['/conseillers']);
 	}
 

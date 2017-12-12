@@ -56,10 +56,15 @@ getAlldemands(): Observable<Demande[]> {
 		.catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 }
 
-connexion( pseudo: string , password: string ): Observable<String[]> {
-	console.log('pseudo = ' + pseudo + ', message = ' + password );
-	return this.http.post(this.apiLogin , [ pseudo , password ]  )
-		.catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+connexion( pseudo: string , password: string ): Observable<string> {
+	// console.log('pseudo = ' + pseudo + ', message = ' + password );
+	let result : Observable<string> = this.http.post(this.apiLogin , [ pseudo , password ])
+												.map(this.extractData);
+		return result;
 }
 
+private extractData(res: Response) {
+	let body = res.text();
+	return body  || {};
+}
 }

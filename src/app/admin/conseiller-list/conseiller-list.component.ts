@@ -7,19 +7,19 @@ import { Router } from '@angular/router';
   selector: 'app-conseiller-list',
   templateUrl: './conseiller-list.component.html',
   styleUrls: ['./conseiller-list.component.css'],
-  providers:[ConseillerService]  //sert a utiliser notre service dans ce composant
+  providers: [ConseillerService]  // sert a utiliser notre service dans ce composant
 })
 export class ConseillerListComponent implements OnInit {
-	private conseillers: Conseiller[]; //servira a remplir les données trouvé (http)
+	private conseillers: Conseiller[]; // servira a remplir les données trouvé (http)
 
-	constructor(private conseillerService : ConseillerService , private router: Router) { }
+	constructor(private conseillerService: ConseillerService , private router: Router) { }
 
-	ngOnInit() { //quand le composant sera lancé on chargera tout les conseillers ici
+	ngOnInit() { // quand le composant sera lancé on chargera tout les conseillers ici
 		this.getAllConseillers();
 	}
 
-	getAllConseillers(){
-		//j'utilise le findAll.. dans le conseillerService
+	getAllConseillers() {
+		// j'utilise le findAll.. dans le conseillerService
 		this.conseillerService.findAllConseiller().subscribe( // ajout de subscribe qui soulevera une erreur ou affectera tout les conseillers
 			conseillers => { this.conseillers = conseillers } ,
 			err => { console.log(err) ;
@@ -40,7 +40,7 @@ export class ConseillerListComponent implements OnInit {
 	/*deleteConseiller(conseiller : Conseiller){
 		if (conseiller) {
 			this.conseillerService.deleteConseillerByMle(conseiller.matricule).subscribe(
-					res=>{ 
+					res=>{
 					this.getAllConseillers();
 					this.router.navigate(['/conseillers']);
 					 }
@@ -48,5 +48,4 @@ export class ConseillerListComponent implements OnInit {
 		}
 	}*/
 
-	
 }

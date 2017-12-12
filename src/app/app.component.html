@@ -11,12 +11,17 @@
 			<li><a routerLink="/connexion">Connexion</a></li>
 		</ul>-->
 
-		<ul class="nav navbar-nav ">
+		<ul class="nav navbar-nav navbar-right ">
+			<div *ngIf="!typeUtilisateur" >
 				<li><a routerLink="/connexion">Connexion</a></li>
+			</div>
+			<div *ngIf="typeUtilisateur" >
+					<li><a routerLink="/connexion">Deconnexion</a></li>
+			</div>
 		</ul>
   </div>
 </nav>
 	
-	<div class="container">
+	<div class="container-fluid">
 		<router-outlet></router-outlet>		
 	</div>

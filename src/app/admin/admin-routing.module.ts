@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 // modules de "base" du composant principale
 import { ConseillerListComponent } from './conseiller-list/conseiller-list.component';
 import { ConseillerDetailComponent } from './conseiller-detail/conseiller-detail.component'; 
-
 import { AffectationComponent} from './affectation/affectation.component';
 
 // on declare les routes et le composant qui va correspondre
@@ -13,7 +12,6 @@ const routes: Routes = [
 {  path: 'conseillers' , component: ConseillerListComponent },
 {  path: 'conseillers/create' , component: ConseillerDetailComponent },
 {  path: 'conseillers/edit/:mle' , component: ConseillerDetailComponent }, // pareil pour edit/:mle
-{  path: 'admin' , component: ConseillerDetailComponent }, // pareil pour edit/:mle
 {  path: 'affectation' , component: AffectationComponent }
  ];
 
