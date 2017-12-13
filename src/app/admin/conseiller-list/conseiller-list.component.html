@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col">
       <section>
@@ -28,11 +28,11 @@
             <th>Telephone</th>
             <th>Matricule</th>
 
-          <!--  <th>Pseudo</th>
+           <th>Pseudo</th>
                 <th>Password</th>
                 <th>Adresse</th>
                 <th>date de Naissance</th>
-                <th>Liste de Demande </th>-->
+                <th>Liste de Demande </th>
 
           </tr>
           </thead>
@@ -45,16 +45,16 @@
             <td>{{ conseiller.ville }}      </td>
             <td>{{ conseiller.telephone }}  </td>
             <td>{{ conseiller.matricule }}  </td>
-
-             <!--<td>{{ conseiller.pseudo }}    </td>
-                 <td>{{ conseiller.motdepasse }}</td>
-                 <td>{{ conseiller.adresse }}   </td>
-                 <td>{{ conseiller.dateNaissance }}</td>
-                 <td>{{ conseiller.listeDemandesClient }}</td>-->
-
+            
+            <td>{{ conseiller.pseudo }}    </td>
+            <td>{{ conseiller.motdepasse }}</td>
+            <td>{{ conseiller.adresse }}   </td>
+            <td>{{ conseiller.dateNaissance }}</td>
+            <td>{{ conseiller.listeDemandesClient }}</td>
+            
             <td>
                <button type="button" class="btn btn-success" (click)="editConseillerPage(conseiller)">Edit</button>
-               <button type="button" class="btn btn-danger" (click)="deleteConseiller(conseiller)">Delete</button>
+               <!--<button type="button" class="btn btn-danger" (click)="deleteConseiller(conseiller)">Delete</button>-->
             </td>
           </tr>
           </tbody>

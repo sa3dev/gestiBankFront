@@ -1,30 +1,30 @@
 export class Conseiller {
 
   matricule: number;
-  nom  :  string;   
-  prenom : string;
-  pseudo : string;
-  motdepasse : string;
-  email : string;
-  adresse : string;
-  codePostal : number;
+  nom:  string;
+  prenom: string;
+  pseudo: string;
+  motdepasse: string;
+  email: string;
+  adresse: string;
+  codePostal: number;
   ville: string;
   telephone: number;
   dateNaissance: number;
 
   constructor(
       matricule: number,
-      nom  :  string,   
-      prenom : string,
-      pseudo : string,
-      motdepasse : string,
-      email : string,
-      adresse : string,
-      codePostal : number,
+      nom:  string,
+      prenom: string,
+      pseudo: string,
+      motdepasse: string,
+      email: string,
+      adresse: string,
+      codePostal: number,
       ville: string,
       telephone: number,
       dateNaissance: number
-    ){
+    ) {
     this.matricule = matricule;
     this.nom = nom;
     this.prenom = prenom;

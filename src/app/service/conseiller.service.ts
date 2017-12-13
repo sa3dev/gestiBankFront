@@ -58,13 +58,14 @@ getAlldemands(): Observable<Demande[]> {
 
 connexion( pseudo: string , password: string ): Observable<string> {
 	// console.log('pseudo = ' + pseudo + ', message = ' + password );
-	let result : Observable<string> = this.http.post(this.apiLogin , [ pseudo , password ])
-												.map(this.extractData);
+	const result: Observable<string> = this.http.post(this.apiLogin , [ pseudo , password ])
+												.map(this.extractData)
+												.catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 		return result;
 }
 
 private extractData(res: Response) {
-	let body = res.text();
+	const body = res.text();
 	return body  || {};
 }
 }

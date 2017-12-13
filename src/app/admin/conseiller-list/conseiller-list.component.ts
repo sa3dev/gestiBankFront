@@ -33,7 +33,7 @@ export class ConseillerListComponent implements OnInit {
 
 	editConseillerPage(conseiller: Conseiller){
 		if (conseiller) {
-			this.router.navigate(['conseillers/edit',conseiller.matricule]);
+			this.router.navigate(['conseillers/edit', conseiller.matricule]);
 		}
 	}
 

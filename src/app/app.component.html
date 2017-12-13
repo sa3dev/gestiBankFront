@@ -12,11 +12,11 @@
 		</ul>-->
 
 		<ul class="nav navbar-nav navbar-right ">
-			<div *ngIf="!typeUtilisateur" >
+			<div *ngIf="!pseudo" >
 				<li><a routerLink="/connexion">Connexion</a></li>
 			</div>
-			<div *ngIf="typeUtilisateur" >
-					<li><a routerLink="/connexion">Deconnexion</a></li>
+			<div *ngIf="pseudo" >
+					<li><a routerLink="/deconnexion">Deconnexion</a></li>
 			</div>
 		</ul>
   </div>
