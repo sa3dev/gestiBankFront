@@ -8,16 +8,16 @@
     <button class="btn btn-danger btn-block" (click)="clear()">Gestion conseillers</button>
     <button class="btn btn-danger btn-block" (click)="clear()">Affectation client/conseiller</button>
       <hr/>
-     <!-- <ul class="list-unstyled list-group" 
+     <!-- 
+       <ul class="list-unstyled list-group" 
           *ngFor="let user of users" 
           (click)="selectUser(user)" >
-          
           <li class="list-group-item" [class.active]="user === userSelected">{{ user.name }}</li>
-      </ul>
+        </ul>
     -->
     </div>
     <div class="col-md-9 list2">
-    <app-conseiller-list ></app-conseiller-list>
+    <app-conseiller-list [()]=""></app-conseiller-list>
     <app-conseiller-detail></app-conseiller-detail>
     <app-affectation></app-affectation>
     </div>

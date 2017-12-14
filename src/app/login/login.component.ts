@@ -47,12 +47,14 @@ export class LoginComponent implements OnInit {
 
         if (this.test[0] === 'Administrateur' ) {
             this.router.navigate(['admin']);
+            this.test = [''];
 
         }else if ( this.test[0] === 'Conseiller') {
           this.router.navigate(['conseiller/', this.test[1] ]);
-
+          this.test = [''];
         }else if (this.test[0] === 'Client') {
           this.router.navigate(['client/', this.test[1]]);
+          this.test = [''];
         }
     }
 
