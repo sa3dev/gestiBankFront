@@ -40,23 +40,23 @@ export class LoginComponent implements OnInit {
         if ( this.typeUtilisateur !== undefined) {
           this.test = this.typeUtilisateur.split(';');
 
-        console.log('type = ' + this.test[0]);
-        console.log('pseudo = ' + this.test[1]);
+          console.log('type = ' + this.test[0]);
+          console.log('pseudo = ' + this.test[1]);
 
-        // this.conseillerService.getClientByPseud(this.test[1]).subscribe()
+          // this.conseillerService.getClientByPseudo(this.test[1]).subscribe()
 
-        if (this.test[0] === 'Administrateur' ) {
-            this.router.navigate(['admin']);
-            this.test = [''];
+          if (this.test[0] === 'Administrateur' ) {
+              this.router.navigate(['admin']);
 
-        }else if ( this.test[0] === 'Conseiller') {
-          this.router.navigate(['conseiller/', this.test[1] ]);
-          this.test = [''];
-        }else if (this.test[0] === 'Client') {
-          this.router.navigate(['client/', this.test[1]]);
-          this.test = [''];
+          }else if ( this.test[0] === 'Conseiller') {
+            this.router.navigate(['conseiller/', this.test[1] ]);
+            // this.test = [''];
+            
+          }else if (this.test[0] === 'Client') {
+            this.router.navigate(['client/', this.test[1]]);
+            // this.test = [''];
+          }
         }
-    }
 
   }
 
