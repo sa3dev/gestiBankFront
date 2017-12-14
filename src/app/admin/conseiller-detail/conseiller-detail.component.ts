@@ -19,8 +19,8 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 	conseillerForm: FormGroup;
 	private sub: any;
 
-  constructor( private route: ActivatedRoute, 
-  			   private router : Router,
+  constructor( private route: ActivatedRoute,
+  			   private router: Router,
   			   private conseillerService: ConseillerService) { }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 		pseudo : 	new FormControl('' , Validators.required),
 
 		password :  new FormControl('' , Validators.required),
-		email : 	new FormControl('' , [ 
+		email : 	new FormControl('' , [
 						Validators.required ,
 						Validators.pattern("[^ @]*@[^ @]*")
 				]),
@@ -61,11 +61,11 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 	  					password:   conseiller.motdepasse,
 	  					email :		conseiller.email,
 
-	  					telephone: conseiller.telephone,
+	  					telephone:  conseiller.telephone,
 	  					codePostal: conseiller.codePostal,
-	  					ville :		conseiller.ville,
+	  					ville:		conseiller.ville,
 	  					dateNaissance: conseiller.dateNaissance
-	  				});
+					  });
 	  			},
 	  			error => {
 	  				console.log(error);
@@ -82,7 +82,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 		  	if (this.conseillerForm.valid) { // editer un conseiller
 
 		  		if (this.matricule) {
-		  		let conseillers: Conseiller = new Conseiller(
+		  		const conseillers: Conseiller = new Conseiller(
 				this.matricule,
 				// this.conseillerForm.controls['matricule'].value,
 				this.conseillerForm.controls['name'].value,
@@ -90,8 +90,9 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 				this.conseillerForm.controls['pseudo'].value,
 
 				this.conseillerForm.controls['password'].value,
-				this.conseillerForm.controls['address'].value,
 				this.conseillerForm.controls['email'].value,
+				this.conseillerForm.controls['address'].value,
+				
 
 				this.conseillerForm.controls['codePostal'].value,
 				this.conseillerForm.controls['ville'].value,
@@ -101,7 +102,7 @@ export class ConseillerDetailComponent implements OnInit , OnDestroy{
 				this.conseillerService.updateConseiller(conseillers).subscribe();
 
 		  	}else {
-		  		let conseillers : Conseiller = new Conseiller(
+		  		const conseillers: Conseiller = new Conseiller(
 		  			this.conseillerForm.controls['matricule'].value,
 		  			this.conseillerForm.controls['name'].value,
 		  			this.conseillerForm.controls['firstname'].value,

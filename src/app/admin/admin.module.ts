@@ -7,6 +7,7 @@ import { ConseillerDetailComponent } from './conseiller-detail/conseiller-detail
 // import des module pour formulaire
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { AffectationComponent } from './affectation/affectation.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 @NgModule({
@@ -16,6 +17,6 @@ import { AffectationComponent } from './affectation/affectation.component';
     FormsModule,	// declaration des modules
     ReactiveFormsModule
   ],
-  declarations: [ConseillerListComponent, ConseillerDetailComponent, AffectationComponent]
+  declarations: [ConseillerListComponent, ConseillerDetailComponent, AffectationComponent, AdminPageComponent]
 })
 export class AdminModule { }
